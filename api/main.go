@@ -35,5 +35,5 @@ func main() {
 		AllowedHeaders: []string{"Content-Type", "Authorization"},
 	})
 
-	log.Fatalln(http.ListenAndServe(":"+os.Getenv("APP_PORT"), c.Handler(router)))
+	log.Fatalln(http.ListenAndServe(":55555", c.Handler(router)))
 }
