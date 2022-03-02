@@ -31,7 +31,7 @@ func (ts *todoStore) List() ([]Todo, error) {
 	txn := ts.db.Txn(false)
 	defer txn.Abort()
 
-	it, err := txn.GetReverse("todo", "id")
+	it, err := txn.GetReverse("todo", "created_at")
 	if err != nil {
 		return result, err
 	}

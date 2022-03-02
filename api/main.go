@@ -25,7 +25,7 @@ func main() {
 
 	router.Name("List").Methods(http.MethodGet).Path(globalPath + "/todos").Handler(logger(controller.List(), "List"))
 	router.Name("Get").Methods(http.MethodGet).Path(globalPath + "/todos/{id}").Handler(logger(controller.Get(), "Get"))
-	router.Name("Insert").Methods(http.MethodPost).Path(globalPath + "/todos/").Handler(logger(controller.Insert(), "Insert"))
+	router.Name("Insert").Methods(http.MethodPost).Path(globalPath + "/todos").Handler(logger(controller.Insert(), "Insert"))
 	router.Name("Delete").Methods(http.MethodDelete).Path(globalPath + "/todos/{id}").Handler(logger(controller.Delete(), "Delete"))
 
 	c := cors.New(cors.Options{
